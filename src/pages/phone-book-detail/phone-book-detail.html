@@ -11,13 +11,18 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-item >
+    <ion-thumbnail>
     <img src="{{contact.imageUrl}}" alt="" wide="150" height="150">
-    <button button ion-button block color = "primary">
-      <ion-icon name="call"></ion-icon> &nbsp;{{contact.telephone}}
+  </ion-thumbnail>
+    <button button ion-button block color = "primary" block (click)="call()">
+      <ion-icon name="call">
+      </ion-icon> &nbsp;{{contact.telephone}}
     </button>
-    <button button ion-button block color = "secondary" >
+    <button button ion-button block color = "secondary" block (click)="sms()">
       <ion-icon name="mail"></ion-icon> &nbsp;{{contact.telephone}}
     </button>
+    </ion-item>
         
 
 </ion-content>
