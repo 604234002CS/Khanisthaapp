@@ -1,3 +1,7 @@
+import { PostJsonPage } from './../pages/post-json/post-json';
+import { ArrayJsonPage } from './../pages/array-json/array-json';
+import { SimpleJsonPage } from './../pages/simple-json/simple-json';
+import { JsonMenuPage } from './../pages/json-menu/json-menu';
 import { Flashlight } from '@ionic-native/flashlight';
 import { FlashlightPage } from './../pages/flashlight/flashlight';
 import { ScannerPage } from './../pages/scanner/scanner';
@@ -18,7 +22,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   declarations: [
     MyApp,
     HomePage,
-    ListPage,LoginPage,ScannerPage,FlashlightPage
+    ListPage,LoginPage,ScannerPage,FlashlightPage,JsonMenuPage,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,LoginPage,ScannerPage,FlashlightPage
+    ListPage,LoginPage,ScannerPage,FlashlightPage,JsonMenuPage,
   ],
   providers: [
     StatusBar,
