@@ -1,3 +1,4 @@
+import {HttpClientModule} from '@angular/common/http';
 import { PostJsonPage } from './../pages/post-json/post-json';
 import { ArrayJsonPage } from './../pages/array-json/array-json';
 import { SimpleJsonPage } from './../pages/simple-json/simple-json';
@@ -26,6 +27,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
