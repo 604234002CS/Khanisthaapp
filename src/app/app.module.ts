@@ -1,7 +1,5 @@
+import { MoviesPage } from './../pages/movies/movies';
 import {HttpClientModule} from '@angular/common/http';
-import { PostJsonPage } from './../pages/post-json/post-json';
-import { ArrayJsonPage } from './../pages/array-json/array-json';
-import { SimpleJsonPage } from './../pages/simple-json/simple-json';
 import { JsonMenuPage } from './../pages/json-menu/json-menu';
 import { Flashlight } from '@ionic-native/flashlight';
 import { FlashlightPage } from './../pages/flashlight/flashlight';
@@ -23,7 +21,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   declarations: [
     MyApp,
     HomePage,
-    ListPage,LoginPage,ScannerPage,FlashlightPage,JsonMenuPage,
+    ListPage,LoginPage,ScannerPage,FlashlightPage,JsonMenuPage,MoviesPage,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +32,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,LoginPage,ScannerPage,FlashlightPage,JsonMenuPage,
+    ListPage,LoginPage,ScannerPage,FlashlightPage,JsonMenuPage,MoviesPage,
   ],
   providers: [
     StatusBar,

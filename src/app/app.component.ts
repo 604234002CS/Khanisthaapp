@@ -1,3 +1,4 @@
+import { MoviesPage } from './../pages/movies/movies';
 import { JsonMenuPage } from './../pages/json-menu/json-menu';
 import { FlashlightPage } from './../pages/flashlight/flashlight';
 import { ScannerPage } from './../pages/scanner/scanner';
@@ -30,7 +31,9 @@ export class MyApp {
       { title: 'Login', component: LoginPage, icon: 'person' },
       { title: 'Scanner', component: ScannerPage, icon: 'qr-scanner'},
       { title: 'Flashlight', component: FlashlightPage, icon: 'flash'},
-      { title: 'JsonMenu', component: JsonMenuPage, icon: 'copy'}
+      { title: 'JsonMenu', component: JsonMenuPage, icon: 'copy'},
+      { title: 'Movies App', component: MoviesPage, icon: 'videocam'}
+      
 
     ];
 
