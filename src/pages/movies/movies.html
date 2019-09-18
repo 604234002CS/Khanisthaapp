@@ -9,9 +9,12 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title text-center> Movies App &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<ion-icon
-        name="contact"></ion-icon>
-    </ion-title>
+    <ion-title text-center> Movies App </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -24,7 +27,7 @@
   </ion-card>
 
   <ion-list>
-    <ion-item>
+    <ion-item (click)=goToNow()>
       <ion-thumbnail item-left>
         <img src="assets/imgs/pic2.png">
       </ion-thumbnail>
@@ -33,18 +36,18 @@
       <ion-icon item-right name="arrow-dropright-circle"></ion-icon>
     </ion-item>
 
-    <ion-item>
+    <ion-item color=light (click)=goTOUpcoming()>
       <ion-thumbnail item-start>
         <img src="assets/imgs/pic3.png">
       </ion-thumbnail>
       <h2>Upcoming</h2>
       <p>Upcoming</p>
-      
-        <ion-icon item-right name="arrow-dropright-circle"></ion-icon>
-      
+
+      <ion-icon item-right name="arrow-dropright-circle"></ion-icon>
+
     </ion-item>
 
-    <ion-item>
+    <ion-item (click)=goToPopular()>
       <ion-thumbnail item-left>
         <img src="assets/imgs/pic4.jpg">
       </ion-thumbnail>
@@ -53,7 +56,7 @@
       <ion-icon item-right name="arrow-dropright-circle"></ion-icon>
     </ion-item>
 
-    <ion-item>
+    <ion-item color=light (click)=goToTop()>
       <ion-thumbnail item-start>
         <img src="assets/imgs/pic5.png">
       </ion-thumbnail>

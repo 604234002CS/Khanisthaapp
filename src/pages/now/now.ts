@@ -1,5 +1,8 @@
+import { DetailPage } from './../detail/detail';
+import { MoviesProvider } from './../../providers/movies/movies';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { MoviesPage } from '../movies/movies';
 
 /**
  * Generated class for the NowPage page.
@@ -15,11 +18,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NowPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  moviesArray: any = [];
+  imgPath = 'https://image.tmdb.org/t/p/original/';
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public nowmovie: MoviesProvider) {
+    this.loadnowdata();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NowPage');
-  }
 
+  }
+loadnowdata(){
+  this.nowmovie.getNow().subscribe(nowmovies =>{
+    this.moviesArray=nowmovies['results'];
+  });
+}
+
+getDetail(nowmovie){
+  this.navCtrl.push("DetailPage",nowmovie);
+}
+
+Movieapp(){
+  this.navCtrl.push(MoviesPage);
+}
+
+  
+
+  
 }

@@ -1,3 +1,6 @@
+import { TopPage } from './../top/top';
+import { PopularPage } from './../popular/popular';
+import { UpcomingPage } from './../upcoming/upcoming';
 import { NowPage } from './../now/now';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -28,6 +31,18 @@ export class MoviesPage {
 
   goToNow(){
     this.navCtrl.push("NowPage");
+  }
+
+  goTOUpcoming(){
+    this.navCtrl.push("UpcomingPage")
+  }
+
+  goToPopular(){
+    this.navCtrl.push("PopularPage")
+  }
+
+  goTOTop(){
+    this.navCtrl.push("TopPage")
   }
 
 }
