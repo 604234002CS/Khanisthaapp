@@ -35,8 +35,8 @@ loadnowdata(){
   });
 }
 
-getDetail(nowmovie){
-  this.navCtrl.push("DetailPage",nowmovie);
+detail(nowmovie){
+  this.navCtrl.push("MoviedetailPage",nowmovie);
 }
 
 Movieapp(){
