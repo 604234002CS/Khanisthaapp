@@ -12,7 +12,7 @@
 
 <ion-content padding>
     <ion-item *ngFor="let item of moviesArray"
-    (click)= "detail(nowmovie)">
+    (click)= "detail(item)">
     <div item-left>
       <img src="{{imgPath + item.poster_path}}" style="display: block; width: 90px; height: 120px;">
     </div>

@@ -6,13 +6,30 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>{{detail.title}}</ion-title>
+    <ion-title text-center>Movie Details</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="home" (click)= goTOMovie()></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-item><ion-avatar item-left>
     <img src="{{imgPath + detail.poster_path}}">
-  </ion-avatar> </ion-item>
+  </ion-avatar>{{detail.title}}</ion-item>
+
+  <div><img src="{{imgPath + detail.poster_path}}"></div>
+    <h2>Release Date</h2>
+    <p>{{detail.release_date}}</p>
+    <h2>Vote Average</h2>
+    <p>{{detail.vote_average}}</p>
+    <h2>Overview</h2>
+    <p>{{detail.overview}}</p>
+  
+
+
+
 
 </ion-content>

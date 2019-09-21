@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { MoviesProvider } from '../../providers/movies/movies';
 
 /**
  * Generated class for the TopPage page.
@@ -15,11 +16,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TopPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  moviesArray: any = [];
+  imgPath = 'https://image.tmdb.org/t/p/original/';
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public topmovies: MoviesProvider) {
+    this.loadtopdata();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TopPage');
+  }
+
+  loadtopdata(){
+    this.topmovies.getToprated().subscribe(topmovies =>{
+      this.moviesArray = topmovies['results'];
+    });
+  }
+
+  detail(item){
+    this.navCtrl.push("MoviedetailPage",item);
   }
 
 }

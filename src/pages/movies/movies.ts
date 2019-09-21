@@ -41,7 +41,7 @@ export class MoviesPage {
     this.navCtrl.push("PopularPage")
   }
 
-  goTOTop(){
+  gotoTop(){
     this.navCtrl.push("TopPage")
   }
 

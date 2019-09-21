@@ -1,4 +1,3 @@
-import { DetailPage } from './../detail/detail';
 import { MoviesProvider } from './../../providers/movies/movies';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -35,8 +34,8 @@ loadnowdata(){
   });
 }
 
-detail(nowmovie){
-  this.navCtrl.push("MoviedetailPage",nowmovie);
+detail(item){
+  this.navCtrl.push("MoviedetailPage",item);
 }
 
 Movieapp(){
@@ -47,3 +46,4 @@ Movieapp(){
 
   
 }
+//end

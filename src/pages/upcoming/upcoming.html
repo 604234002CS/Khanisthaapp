@@ -6,10 +6,18 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Upcoming</ion-title>
+    <ion-title text-center>Upcoming</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+    <ion-item *ngFor="let item of moviesArray"
+    (click)= "detail(item)">
+        <div item-left>
+          <img src="{{imgPath + item.poster_path}}" style="display: block; width: 90px; height: 120px;">
+        </div>
+        <h2>{{item.title}}</h2>
+        <p>Release:{{item.release_date}}</p>
+      </ion-item>
 
 </ion-content>

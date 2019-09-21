@@ -1,3 +1,4 @@
+import { MoviesProvider } from './../../providers/movies/movies';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -18,11 +19,22 @@ export class UpcomingPage {
   moviesArray: any = [];
   imgPath = 'https://image.tmdb.org/t/p/original/';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public upcomingmovies: MoviesProvider) {
+    this.loadupcomingdata();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UpcomingPage');
+  }
+
+  loadupcomingdata(){
+    this.upcomingmovies.getUpcoming().subscribe(upcomingmovies =>{
+      this.moviesArray = upcomingmovies['results'];
+    });
+  }
+
+  detail(item){
+    this.navCtrl.push("MoviedetailPage",item);
   }
 
 }

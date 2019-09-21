@@ -1,3 +1,4 @@
+import { MoviesPage } from './../movies/movies';
 import { MoviesProvider } from './../../providers/movies/movies';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -27,5 +28,11 @@ export class MoviedetailPage {
     this.detail = this.navParams.data;
     console.log(this.detail);
   };
+
+  goTOMovie(){
+    this.navCtrl.push("MoviesPage");
+  }
+    
+  
 
 }
