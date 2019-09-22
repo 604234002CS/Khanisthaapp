@@ -37,4 +37,15 @@ export class TopPage {
     this.navCtrl.push("MoviedetailPage",item);
   }
 
+  onEvent(ev: any) {
+    let val = ev.target.value;
+    if(val.length !== 0){
+      this.topmovies.searchMovie(val).subscribe(topmovies => {
+        this.moviesArray = topmovies['results'];
+      });
+    }else{
+      this.loadtopdata();
+    }
+  }
+
 }

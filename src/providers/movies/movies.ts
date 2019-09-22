@@ -9,14 +9,9 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class MoviesProvider {
-  searchMovie(val: any) {
-    throw new Error("Method not implemented.");
-  }
   
   public baseURL = 'https://api.themoviedb.org/3/';
   public apiKey = 'api_key=7552e9af1bfb832332c3005ada3d28a7';
-
-
   constructor(public http: HttpClient) {
     console.log('Hello MoviesProvider Provider');
   }
@@ -37,6 +32,11 @@ export class MoviesProvider {
 
   getToprated(){
     const url = this.baseURL + 'movie/top_rated?' + this.apiKey;
+    return this.http.get(url);
+  }
+
+  searchMovie(query) {
+    const url = this.baseURL + 'search/movie?query=' + query + '&' + this.apiKey;
     return this.http.get(url);
   }
 

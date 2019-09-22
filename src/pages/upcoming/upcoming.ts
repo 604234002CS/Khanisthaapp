@@ -36,5 +36,15 @@ export class UpcomingPage {
   detail(item){
     this.navCtrl.push("MoviedetailPage",item);
   }
+  onEvent(ev: any) {
+    let val = ev.target.value;
+    if(val.length !== 0){
+      this.upcomingmovies.searchMovie(val).subscribe(upcomingmovies => {
+        this.moviesArray = upcomingmovies['results'];
+      });
+    }else{
+      this.loadupcomingdata();
+    }
+  }
 
 }
