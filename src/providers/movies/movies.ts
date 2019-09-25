@@ -40,6 +40,10 @@ export class MoviesProvider {
     return this.http.get(url);
   }
 
+  getVideos(movieID){
+    const url = this.baseURL + 'movie/' + movieID + '/videos?' + this.apiKey + '&language=en-US';
+    return this.http.get(url);
+  }
   
 
 }
