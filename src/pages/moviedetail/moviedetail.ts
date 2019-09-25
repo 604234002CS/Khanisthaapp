@@ -2,6 +2,7 @@
 import { MoviesProvider } from './../../providers/movies/movies';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 /**
  * Generated class for the MoviedetailPage page.
@@ -28,7 +29,7 @@ status: any;
 revenue: any;
 imgPath = 'https://image.tmdb.org/t/p/original/';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public moviedetail: MoviesProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public moviedetail: MoviesProvider,private tts: TextToSpeech) {
   }
 
   ionViewDidLoad() {
@@ -41,10 +42,13 @@ imgPath = 'https://image.tmdb.org/t/p/original/';
     this.navCtrl.push('VideoPage',key);
   }
 
-  goTOMovie(){
-    this.navCtrl.push("MoviesPage");
+  talk(textOrOptions){
+    console.log(textOrOptions);
+    this.tts.speak(textOrOptions)
+    .then(() => console.log('Success'))
+    .catch((reason: any) => console.log(reason));
+
   }
-    
   
 
 }
