@@ -19,6 +19,7 @@ import { SMS } from '@ionic-native/sms/ngx';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { MoviesProvider } from '../providers/movies/movies';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { SocialSharing } from '@ionic-native/social-sharing';
 @NgModule({
   declarations: [
     MyApp,
@@ -40,7 +41,7 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
   ],
   providers: [
     StatusBar,
-    SplashScreen,SMS,BarcodeScanner,Flashlight,TextToSpeech,
+    SplashScreen,SMS,BarcodeScanner,Flashlight,TextToSpeech,SocialSharing,
     
      {provide: ErrorHandler, useClass: IonicErrorHandler},
     MoviesProvider

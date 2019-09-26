@@ -3,6 +3,8 @@ import { MoviesProvider } from './../../providers/movies/movies';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { SocialSharing } from '@ionic-native/social-sharing';
+
 
 /**
  * Generated class for the MoviedetailPage page.
@@ -29,7 +31,8 @@ status: any;
 revenue: any;
 imgPath = 'https://image.tmdb.org/t/p/original/';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public moviedetail: MoviesProvider,private tts: TextToSpeech) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public moviedetail: MoviesProvider,
+    private tts: TextToSpeech,private socialSharing: SocialSharing) {
   }
 
   ionViewDidLoad() {
@@ -49,6 +52,18 @@ imgPath = 'https://image.tmdb.org/t/p/original/';
     .catch((reason: any) => console.log(reason));
 
   }
+
+    shareFacebook(){
+    let title = this.detail.title;
+    let overview = this.detail.overview;
+    this.socialSharing.shareViaFacebook('Movie.title' +title+':'+overview);
+  }
+
+  
+
+
+
+
   
 
 }
