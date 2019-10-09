@@ -1,7 +1,7 @@
 
 import { MoviesProvider } from './../../providers/movies/movies';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController} from 'ionic-angular';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
@@ -30,9 +30,10 @@ Budget: any;
 status: any;
 revenue: any;
 imgPath = 'https://image.tmdb.org/t/p/original/';
+playing: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public moviedetail: MoviesProvider,
-    private tts: TextToSpeech,private socialSharing: SocialSharing) {
+    private tts: TextToSpeech,private socialSharing: SocialSharing,private actionSheetContronller: ActionSheetController) {
   }
 
   ionViewDidLoad() {
@@ -45,25 +46,31 @@ imgPath = 'https://image.tmdb.org/t/p/original/';
     this.navCtrl.push('VideoPage',key);
   }
 
-  talk(textOrOptions){
-    console.log(textOrOptions);
-    this.tts.speak(textOrOptions)
-    .then(() => console.log('Success'))
-    .catch((reason: any) => console.log(reason));
-
+  talk(textOrOptions:string){
+    this.tts.speak(textOrOptions);
   }
+  stop(){
+    this.tts.speak("").then((value)=>{
+    this.playing=false;
+    });
+    }
 
-    shareFacebook(){
+  share(){
     let title = this.detail.title;
     let overview = this.detail.overview;
-    this.socialSharing.shareViaFacebook('Movie.title' +title+':'+overview);
+    let numberphone = "0660083086";
+    this.socialSharing.shareViaSMS('Moive title'+title+':'+overview,numberphone);
   }
 
-  
-
-
-
-
-  
-
 }
+  
+
+
+  
+
+
+
+
+  
+
+
