@@ -58,8 +58,7 @@ playing: boolean;
   share(){
     let title = this.detail.title;
     let overview = this.detail.overview;
-    let numberphone = "0660083086";
-    this.socialSharing.shareViaSMS('Moive title'+title+':'+overview,numberphone);
+    this.socialSharing.shareViaFacebook('Moive title'+title+':'+overview);
   }
 
 }
